@@ -14,13 +14,13 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Long user_id;
+    private Long userId;
 
     @Column(name="password", nullable=false)
     private String password;
 
     @Column(name = "user_name", nullable = false)
-    private String name;
+    private String userName;
 
     @Column(name = "age")
     private Integer age;

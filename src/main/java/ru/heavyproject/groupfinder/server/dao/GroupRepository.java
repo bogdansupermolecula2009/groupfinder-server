@@ -12,6 +12,6 @@ public interface GroupRepository extends CrudRepository<Group,Long> {
     Optional<Group> findById(Long id);
     List<Group> findAll();
     List<Group> findByOwner(String owner);
-    Optional<Group> save(Group group);
+
     void delete(Group group);
 }

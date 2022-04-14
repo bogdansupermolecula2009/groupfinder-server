@@ -12,7 +12,7 @@ import java.util.List;
 public class Role implements GrantedAuthority {
     @Id
     @Column(name = "role_id")
-    private Long role_id;
+    private Long roleId;
     @Column(name = "role_name")
     private String name;
 

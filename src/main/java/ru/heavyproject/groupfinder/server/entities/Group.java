@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Group {
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "group_id")
-    private Long group_id;
+    private Long groupId;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
