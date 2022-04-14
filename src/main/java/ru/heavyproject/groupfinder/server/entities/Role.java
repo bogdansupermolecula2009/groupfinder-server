@@ -1,11 +1,15 @@
 package ru.heavyproject.groupfinder.server.entities;
 
+import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "role")
-public class Role {
+@Data
+public class Role implements GrantedAuthority {
     @Id
     @Column(name = "role_id")
     private Long role_id;
@@ -16,4 +20,8 @@ public class Role {
     private List<User> users;
 
 
+    @Override
+    public String getAuthority() {
+        return getName();
+    }
 }
