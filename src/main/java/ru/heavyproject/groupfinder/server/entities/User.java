@@ -17,13 +17,13 @@ public class User {
     private String name;
 
     @Column(name = "age")
-    private String age;
+    private Integer age;
 
     @OneToMany(mappedBy = "owner")
     private Set<Group> groups;
 
     @ManyToMany
-    @JoinTable(joinColumns = @JoinColumn(name = "person_id"),
+    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role>roles;
 
