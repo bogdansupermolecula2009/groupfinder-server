@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Set;
 
@@ -19,12 +20,15 @@ public class User implements UserDetails {
     @Column(name = "user_id")
     private Long userId;
 
+    @NotNull(message = "User name can't be empty")
     @Column(name = "user_name", nullable = false)
     private String username;
 
+    @NotNull(message = "Password can't be empty")
     @Column(name="password", nullable=false)
     private String password;
 
+    @NotNull(message = "Email can't be empty")
     @Column(name = "email")
     private String email;
 

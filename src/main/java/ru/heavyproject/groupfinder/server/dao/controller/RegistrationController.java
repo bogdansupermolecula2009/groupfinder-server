@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.heavyproject.groupfinder.server.entities.User;
 import ru.heavyproject.groupfinder.server.service.UserService;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping ("/")
 @Slf4j
@@ -28,7 +30,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String registrationPost (@ModelAttribute("userForm") User user, BindingResult result) {
+    public String registrationPost (@ModelAttribute("userForm") @Valid User user, BindingResult result) {
         UserDetails userFromBase = userService.loadUserByUsername(user.getUsername());
         if (userFromBase != null) {
             result.rejectValue("username", null, "There is already an account registered with that user name");
