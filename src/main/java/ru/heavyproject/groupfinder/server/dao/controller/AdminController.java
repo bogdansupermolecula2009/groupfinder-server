@@ -1,4 +1,4 @@
-package ru.heavyproject.groupfinder.server.controller;
+package ru.heavyproject.groupfinder.server.dao.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

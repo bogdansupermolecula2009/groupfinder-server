@@ -1,6 +1,8 @@
 package ru.heavyproject.groupfinder.server.entities;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,19 +13,26 @@ import java.util.Set;
 @Entity
 @Table(name = "user_t")
 @Data
+@Setter
 public class User implements UserDetails {
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long userId;
 
+    @Column(name = "user_name", nullable = false)
+    private String username;
+
     @Column(name="password", nullable=false)
     private String password;
 
-    @Column(name = "user_name", nullable = false)
-    private String userName;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "age")
-    private Integer age;
+    @Column (name = "first_name")
+    private String firstName;
+
+    @Column (name = "last_name")
+    private String lastName;
 
     @OneToMany(mappedBy = "owner")
     private Set<Group> groups;
@@ -40,12 +49,20 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
