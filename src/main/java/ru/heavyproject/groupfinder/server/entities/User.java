@@ -22,9 +22,6 @@ public class User implements UserDetails {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "age")
-    private Integer age;
-
     @OneToMany(mappedBy = "owner")
     private Set<Group> groups;
 
