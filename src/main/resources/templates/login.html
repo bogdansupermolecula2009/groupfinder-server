@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
+<link th:rel="stylesheet" th:href="@{/public/bootstrap.min.css} "/>
 <head>
-    <!-- HTML Codes by Quackit.com -->
-    <title>
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {background-color: #9a5353;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
-        h1{font-family:Arial, sans-serif;color:#000000;background-color:#ffffff;}
-        p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
-    </style>
+
 </head>
 <body>
-<h1>СТАРТОВАЯ СТРАНИЧКА</h1>
-<p>СТРАНИЧКА</p>
+<form>
+        <div class="container-md">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+</form>
 </body>
 </html>
